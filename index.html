@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAKRA MÓVEIS - Catálogo e Orçamentos</title>
+    <link rel="stylesheet" href="src/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Model Viewer -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>CHAKRA</h1>
+                <p>MÓVEIS</p>
+            </div>
+            <nav class="nav">
+                <a href="#solucoes">PRODUTOS</a>
+                <a href="#processo">COMPRA</a>
+                <a href="#orcamento">CATÁLOGO</a>
+                <a href="#contato">CONTATO</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Móveis que transformam seu espaço<br>Design, qualidade e conforto para sua casa</h2>
+                <div id="card">
+                    <!-- ADICIONE AQUI A PARTE DE VR -->
+
+                    <model-viewer src="src/assets/MESA MOVENORD.glb" ios-src="src/assets/MESA MOVENORD.usdz"
+                        poster="src/assets/Mesa_poster.png" alt="Mesa de Centro - Movenord" shadow-intensity="1"
+                        camera-controls auto-rotate ar min-camera-orbit="auto 0deg auto"
+                        max-camera-orbit="auto 88deg auto">
+                    </model-viewer>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dark Banner -->
+    <section class="dark-banner">
+        <div class="container">
+            <p>DESIGN QUE TRANSFORMA AMBIENTES</p>
+        </div>
+    </section>
+
+    <!-- Soluções Section -->
+    <section id="solucoes" class="solucoes">
+        <div class="container">
+            <h2>Nossos Produtos</h2>
+            <div class="solucoes-grid">
+                <div class="solucao-card">
+                    <div class="icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40">
+                            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2" fill="none" />
+                            <path d="M16 15 L25 20 L16 25 Z" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <h3>Mesas de Centro e Apoio</h3>
+                    <p>Peças com acabamento premium, design exclusivo<br>e medidas para diferentes ambientes.</p>
+                </div>
+                <div class="solucao-card">
+                    <div class="icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40">
+                            <rect x="8" y="12" width="24" height="16" stroke="currentColor" stroke-width="2"
+                                fill="none" />
+                            <circle cx="20" cy="20" r="3" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <h3>Poltronas e Sofás</h3>
+                    <p>Conforto e ergonomia com variedade de tecidos<br>e opções de personalização.</p>
+                </div>
+                <div class="solucao-card">
+                    <div class="icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40">
+                            <circle cx="20" cy="20" r="15" stroke="currentColor" stroke-width="2" fill="none" />
+                            <circle cx="20" cy="20" r="8" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <h3>Estantes e Armários</h3>
+                    <p>Soluções de armazenamento com design modular<br>e materiais duráveis para o dia a dia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Processo Section -->
+    <section id="processo" class="processo">
+        <div class="container">
+            <h2>Como funciona a compra?</h2>
+            <div class="processo-timeline">
+                <div class="processo-item left">
+                    <div class="processo-number">1</div>
+                    <div class="processo-content">
+                        <h3>Consulta</h3>
+                        <h4>Entenda suas necessidades</h4>
+                        <p>Conversamos sobre o espaço, estilo e medidas. A partir disso indicamos modelos, medidas
+                            e possíveis personalizações para o seu móvel.</p>
+                    </div>
+                </div>
+                <div class="processo-item right">
+                    <div class="processo-number">2</div>
+                    <div class="processo-content">
+                        <h3>Escolha e Personalização</h3>
+                        <h4>Selecione materiais e acabamentos</h4>
+                        <p>Apresentamos opções de madeira, cores, puxadores e acabamentos. Você aprova o projeto antes
+                            de prosseguirmos para a produção.</p>
+                    </div>
+                </div>
+                <div class="processo-item left">
+                    <div class="processo-number">3</div>
+                    <div class="processo-content">
+                        <h3>Confirmação do Pedido</h3>
+                        <h4>Produção agendada</h4>
+                        <p>Após aprovação, confirmamos prazos, condições de pagamento e agendamos a produção e entrega.
+                        </p>
+                    </div>
+                </div>
+                <div class="processo-item right">
+                    <div class="processo-number">4</div>
+                    <div class="processo-content">
+                        <h3>Produção e Entrega</h3>
+                        <h4>Montagem e finalização</h4>
+                        <p>Fabricamos com controle de qualidade, realizamos acabamento final e entregamos seu móvel com
+                            montagem profissional quando aplicável.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Incluso Section -->
+    <section class="incluso">
+        <div class="container">
+            <h2>O que acompanha seu móvel</h2>
+            <div class="incluso-grid">
+                <div class="incluso-card">
+                    <div class="icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40">
+                            <path d="M20 8 L25 18 L35 19 L27 26 L29 36 L20 30 L11 36 L13 26 L5 19 L15 18 Z"
+                                stroke="currentColor" stroke-width="2" fill="none" />
+                        </svg>
+                    </div>
+                    <h3>Entrega e Montagem</h3>
+                    <p>Transporte cuidadoso até sua casa e montagem<br>profissional quando necessário.</p>
+                </div>
+                <div class="incluso-card">
+                    <div class="icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40">
+                            <circle cx="20" cy="20" r="15" stroke="currentColor" stroke-width="2" fill="none" />
+                            <path d="M16 14 L26 20 L16 26 Z" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <h3>Garantia</h3>
+                    <p>Garantia contra defeitos de fabricação<br>e suporte pós-venda por 12 meses.</p>
+                </div>
+                <div class="incluso-card">
+                    <div class="icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40">
+                            <rect x="10" y="10" width="20" height="20" stroke="currentColor" stroke-width="2"
+                                fill="none" />
+                            <line x1="15" y1="15" x2="25" y2="25" stroke="currentColor" stroke-width="2" />
+                            <line x1="25" y1="15" x2="15" y2="25" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3>Acabamento Personalizado</h3>
+                    <p>Acabamentos sob medida, seleção de verniz,<br>pinturas e opções de tecido sob pedido.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proposta Section -->
+    <section id="orcamento" class="proposta">
+        <div class="container">
+            <h2>Catálogo e Preços</h2>
+            <p class="proposta-intro">Conheça nossa seleção de móveis de design com opções de acabamento
+                e personalização. Abaixo, alguns modelos em destaque e seus valores indicativos.</p>
+
+            <div class="proposta-image">
+                <img src="src/assets/furniture.jpg" alt="Catálogo de móveis">
+            </div>
+
+            <div class="orcamento">
+                <h3>Produtos em destaque</h3>
+                <div class="orcamento-items">
+                    <div class="orcamento-item">
+                        <div class="item-info">
+                            <h4>Mesa de Centro Movenord</h4>
+                            <p>Mesa em madeira maciça, acabamento natural, 110x60cm.</p>
+                        </div>
+                        <div class="item-price">R$ 2.500</div>
+                    </div>
+                    <div class="orcamento-item">
+                        <div class="item-info">
+                            <h4>Conjunto Sala - Sofá + Poltrona</h4>
+                            <p>Sofá 3 lugares e poltrona com opções de tecido.
+                            </p>
+                        </div>
+                        <div class="item-price">R$ 6.500</div>
+                    </div>
+                    <div class="orcamento-item">
+                        <div class="item-info">
+                            <h4>Estante Modular (3 módulos)</h4>
+                            <p>Estante em MDF e metal com acabamento personalizado.</p>
+                        </div>
+                        <div class="item-price">R$ 3.200</div>
+                    </div>
+                </div>
+
+                <div class="orcamento-detalhes">
+                    <h4>Especificações e Serviços</h4>
+                    <div class="servicos-lista">
+                        <div class="servico-categoria">
+                            <h5>Material e Acabamento:</h5>
+                            <ul>
+                                <li>Madeira maciça, MDF ou opções sustentáveis</li>
+                                <li>Verniz, óleo ou pintura eletrostática</li>
+                                <li>Opções de puxadores e ferragens</li>
+                            </ul>
+                        </div>
+                        <div class="servico-categoria">
+                            <h5>Serviços Inclusos:</h5>
+                            <ul>
+                                <li>Transporte e entrega especializada</li>
+                                <li>Montagem realizada pela equipe técnica</li>
+                                <li>Inspeção de qualidade antes da entrega</li>
+                            </ul>
+                        </div>
+                        <div class="servico-categoria">
+                            <h5>Garantia e Pós-Venda:</h5>
+                            <ul>
+                                <li>12 meses de garantia contra defeitos de fabricação</li>
+                                <li>Atendimento para manutenção e peças</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="orcamento-footer">
+                    <p><strong>Prazo de Fabricação:</strong> 20-45 dias úteis, dependendo do produto e personalização
+                    </p>
+                    <p><strong>Condições de Pagamento:</strong> Entrada de 30% | Parcelamento e opções em cartão</p>
+                    <p><strong>Validade dos Preços:</strong> 30 dias</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Termos Section -->
+    <section class="termos">
+        <div class="container">
+            <h2>Conheça Nossos Ambientes</h2>
+            <iframe src="https://youtu.be/QBUvAj3Nm30?si=uXMGG_8_2gaEuay5" frameborder="0"
+                class="video-placeholder"></iframe>
+
+        </div>
+    </section>
+
+    <!-- Quem Somos Section -->
+    <section class="quem-somos">
+        <div class="container">
+            <h2>Quem Somos?</h2>
+            <div class="quem-somos-grid">
+                <div class="quem-somos-item">
+                    <h3>Somos Chakra Móveis</h3>
+                    <p>A Chakra Móveis é uma marcenaria especializada em criar peças únicas que transformam ambientes.
+                        Com mais
+                        de 10 anos de experiência no mercado, desenvolvemos móveis que combinam design contemporâneo,
+                        funcionalidade e qualidade artesanal.</p>
+                    <p>Nossa equipe é formada por profissionais apaixonados pelo que fazem, sempre em busca da
+                        excelência técnica e estética. Trabalhamos com os melhores materiais e processos para
+                        garantir que cada móvel seja único e duradouro.</p>
+                </div>
+                <div class="quem-somos-item">
+                    <h3>Nossa Missão</h3>
+                    <p>Transformar espaços em ambientes acolhedores e funcionais através de móveis que inspiram e
+                        encantam.
+                        Acreditamos que cada projeto é uma oportunidade de criar algo especial, que vai além do esperado
+                        e deixa uma marca duradoura na vida de nossos clientes.</p>
+                    <p>Valorizamos a qualidade, a sustentabilidade e o compromisso com cada detalhe em todas as etapas
+                        do processo.
+                        Da consulta inicial à entrega final, estamos ao lado dos nossos clientes para garantir que seus
+                        sonhos
+                        se tornem realidade.</p>
+                </div>
+            </div>
+            <!-- <div class="quem-somos-images">
+                <div class="image-item">
+                    <img src="example.png" alt="Equipe em ação">
+                </div>
+                <div class="image-item">
+                    <img src="example.png" alt="Equipamento de produção">
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60">
+                            <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="2" fill="none" />
+                            <circle cx="30" cy="30" r="20" fill="currentColor" opacity="0.3" />
+                            <circle cx="30" cy="30" r="12" fill="currentColor" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="footer-text">
+                    <h3>Móveis que contam histórias.<br>Ambientes que expressam quem você é.</h3>
+                    <div class="footer-form">
+                        <input type="email" placeholder="Digite seu melhor e-mail" class="email-input">
+                        <button class="submit-btn">ENTRAR EM CONTATO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/script/index.js"></script>
+    <!-- 💁 Include both scripts below to support all browsers! -->
+    <!-- Loads <model-viewer> for modern browsers: -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <!-- Loads <model-viewer> for old browsers like IE11: -->
+    <script nomodule="" src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+</body>
+
+</html>

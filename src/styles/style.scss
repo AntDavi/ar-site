@@ -1,0 +1,1637 @@
+// Reset e configurações globais
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+// Variáveis
+$primary-color: #1a1a1a;
+$secondary-color: #fff;
+$text-color: #444;
+$light-gray: #fafafa;
+$medium-gray: #e8e8e8;
+$dark-gray: #2a2a2a;
+$accent-color: #6b6b6b;
+$accent-light: #8a8a8a;
+
+$font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
+$container-width: 1200px;
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 32px;
+$spacing-lg: 64px;
+$spacing-xl: 96px;
+$spacing-xxl: 128px;
+
+// Breakpoints
+$breakpoint-xs: 375px; // Mobile portrait small
+$breakpoint-sm: 576px; // Mobile portrait
+$breakpoint-md: 768px; // Tablet portrait
+$breakpoint-lg: 1024px; // Tablet landscape / Small desktop
+$breakpoint-xl: 1280px; // Desktop
+$breakpoint-xxl: 1440px; // Large desktop
+
+// Mixins
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+}
+
+// Responsive mixins
+@mixin respond-to($breakpoint) {
+    @if $breakpoint =='xs' {
+        @media (max-width: #{$breakpoint-xs - 1}) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='sm' {
+        @media (max-width: #{$breakpoint-sm - 1}) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='md' {
+        @media (max-width: #{$breakpoint-md - 1}) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='lg' {
+        @media (max-width: #{$breakpoint-lg - 1}) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='xl' {
+        @media (max-width: #{$breakpoint-xl - 1}) {
+            @content;
+        }
+    }
+}
+
+@mixin respond-between($min, $max) {
+    @media (min-width: $min) and (max-width: #{$max - 1}) {
+        @content;
+    }
+}
+
+// Estilos globais
+body {
+    font-family: $font-family;
+    color: $text-color;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.container {
+    @include container;
+}
+
+// Header
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: $secondary-color;
+    padding: $spacing-sm 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        p {
+            font-size: 10px;
+            letter-spacing: 4px;
+            margin: 0;
+            font-weight: 300;
+        }
+    }
+
+    .nav {
+        display: flex;
+        gap: $spacing-md;
+
+        a {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+// Hero Section
+.hero {
+    padding-top: 120px;
+    padding-bottom: $spacing-xl;
+    background: $secondary-color;
+
+    .hero-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: $spacing-xl;
+
+        h2 {
+            font-size: 42px;
+            font-weight: 500;
+            line-height: 1.3;
+            max-width: 550px;
+            color: $primary-color;
+            letter-spacing: -0.5px;
+        }
+
+        #card {
+            margin: 3em auto;
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            border-radius: 6px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+
+            model-viewer {
+                width: 400px;
+                height: 400px;
+                background-color: #ffffff;
+                --poster-color: #ffffff;
+
+                .attribution {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    margin: 1em;
+                }
+
+                .attribution h1 {
+                    margin: 0 0 0.25em;
+                    color: #3D3D3D;
+                }
+
+                .attribution img {
+                    opacity: 0.5;
+                    height: 2em;
+                }
+
+                .attribution .cc {
+                    flex-shrink: 0;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+// Dark Banner
+.dark-banner {
+    background: $dark-gray;
+    padding: $spacing-lg 0;
+    text-align: center;
+
+    p {
+        color: $secondary-color;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        opacity: 0.9;
+    }
+}
+
+// Soluções Section
+.solucoes {
+    padding: $spacing-xxl 0;
+    background: $light-gray;
+
+    h2 {
+        text-align: center;
+        font-size: 38px;
+        font-weight: 600;
+        margin-bottom: $spacing-xl;
+        color: $primary-color;
+        letter-spacing: -0.5px;
+    }
+
+    .solucoes-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $spacing-lg;
+        margin-top: $spacing-xl;
+    }
+
+    .solucao-card {
+        text-align: center;
+        padding: $spacing-lg $spacing-md;
+        background: $secondary-color;
+        border-radius: 12px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .icon {
+            margin: 0 auto $spacing-lg;
+            width: 70px;
+            height: 70px;
+            @include flex-center;
+            color: $accent-color;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: $spacing-md;
+            line-height: 1.4;
+            color: $primary-color;
+        }
+
+        p {
+            font-size: 15px;
+            color: $accent-light;
+            line-height: 1.7;
+        }
+    }
+}
+
+// Processo Section
+.processo {
+    padding: $spacing-xxl 0;
+    background: $secondary-color;
+
+    h2 {
+        text-align: center;
+        font-size: 38px;
+        font-weight: 600;
+        margin-bottom: $spacing-xxl;
+        color: $primary-color;
+        letter-spacing: -0.5px;
+    }
+
+    .processo-timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: $medium-gray;
+            transform: translateX(-50%);
+        }
+    }
+
+    .processo-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: $spacing-lg;
+        position: relative;
+
+        &.left {
+            flex-direction: row;
+            justify-content: flex-end;
+            padding-right: 60px;
+
+            .processo-content {
+                text-align: right;
+                padding-right: $spacing-md;
+            }
+
+            .processo-number {
+                position: absolute;
+                right: 40px;
+            }
+        }
+
+        &.right {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            padding-left: 60px;
+
+            .processo-content {
+                text-align: left;
+                padding-left: $spacing-md;
+            }
+
+            .processo-number {
+                position: absolute;
+                left: 40px;
+            }
+        }
+    }
+
+    .processo-number {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $primary-color;
+        color: $secondary-color;
+        @include flex-center;
+        font-weight: 700;
+        font-size: 18px;
+        z-index: 2;
+    }
+
+    .processo-content {
+        max-width: 360px;
+
+        h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: $spacing-sm;
+            color: $primary-color;
+        }
+
+        h4 {
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: $spacing-md;
+            color: $accent-light;
+        }
+
+        p {
+            font-size: 15px;
+            color: $text-color;
+            line-height: 1.7;
+        }
+    }
+}
+
+// Incluso Section
+.incluso {
+    padding: $spacing-xxl 0;
+    background: $light-gray;
+
+    h2 {
+        text-align: center;
+        font-size: 38px;
+        font-weight: 600;
+        margin-bottom: $spacing-xl;
+        color: $primary-color;
+        letter-spacing: -0.5px;
+    }
+
+    .incluso-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $spacing-lg;
+        margin-top: $spacing-xl;
+    }
+
+    .incluso-card {
+        text-align: center;
+        padding: $spacing-lg $spacing-md;
+        background: $secondary-color;
+        border-radius: 12px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .icon {
+            margin: 0 auto $spacing-lg;
+            width: 70px;
+            height: 70px;
+            @include flex-center;
+            color: $accent-color;
+        }
+
+        h3 {
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: $spacing-md;
+            color: $primary-color;
+        }
+
+        p {
+            font-size: 15px;
+            color: $accent-light;
+            line-height: 1.7;
+        }
+    }
+}
+
+// Proposta Section
+.proposta {
+    padding: $spacing-xxl 0;
+    background: $secondary-color;
+
+    h2 {
+        text-align: center;
+        font-size: 38px;
+        font-weight: 600;
+        margin-bottom: $spacing-lg;
+        color: $primary-color;
+        letter-spacing: -0.5px;
+    }
+
+    .proposta-intro {
+        text-align: center;
+        max-width: 750px;
+        margin: 0 auto $spacing-xl;
+        font-size: 17px;
+        color: $text-color;
+        line-height: 1.8;
+    }
+
+    .proposta-image {
+        max-width: 600px;
+        margin: $spacing-lg auto;
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+        }
+    }
+}
+
+// Orçamento
+.orcamento {
+    max-width: 950px;
+    margin: $spacing-xl auto;
+
+    h3 {
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: $spacing-lg;
+        text-align: center;
+        color: $primary-color;
+        letter-spacing: -0.3px;
+    }
+
+    .orcamento-items {
+        background: $light-gray;
+        border-radius: 12px;
+        padding: $spacing-lg;
+        margin-bottom: $spacing-lg;
+    }
+
+    .orcamento-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $spacing-lg;
+        border-bottom: 1px solid $medium-gray;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        .item-info {
+            h4 {
+                font-size: 19px;
+                font-weight: 600;
+                margin-bottom: $spacing-sm;
+                color: $primary-color;
+            }
+
+            p {
+                font-size: 15px;
+                color: $accent-light;
+                line-height: 1.6;
+            }
+        }
+
+        .item-price {
+            font-size: 26px;
+            font-weight: 700;
+            color: $primary-color;
+            white-space: nowrap;
+            margin-left: $spacing-lg;
+        }
+    }
+
+    .orcamento-detalhes {
+        margin: $spacing-xl 0;
+        padding: $spacing-lg;
+        background: $light-gray;
+        border-radius: 12px;
+
+        h4 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: $spacing-lg;
+            color: $primary-color;
+        }
+
+        .servicos-lista {
+            display: grid;
+            gap: $spacing-lg;
+        }
+
+        .servico-categoria {
+            h5 {
+                font-size: 17px;
+                font-weight: 600;
+                margin-bottom: $spacing-md;
+                color: $primary-color;
+            }
+
+            ul {
+                list-style: none;
+                padding-left: 0;
+
+                li {
+                    font-size: 15px;
+                    color: $text-color;
+                    padding: $spacing-sm 0;
+                    padding-left: $spacing-md;
+                    position: relative;
+                    line-height: 1.6;
+
+                    &::before {
+                        content: '•';
+                        position: absolute;
+                        left: 0;
+                        color: $accent-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .orcamento-total {
+        background: $dark-gray;
+        color: $secondary-color;
+        padding: $spacing-lg;
+        border-radius: 12px;
+        margin: $spacing-lg 0;
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 19px;
+            font-weight: 600;
+
+            .valor-total {
+                font-size: 34px;
+                font-weight: 700;
+            }
+        }
+    }
+
+    .orcamento-footer {
+        margin-top: $spacing-lg;
+        padding: $spacing-lg;
+        background: $light-gray;
+        border-radius: 12px;
+
+        p {
+            font-size: 15px;
+            margin-bottom: $spacing-sm;
+            color: $text-color;
+            line-height: 1.7;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            strong {
+                font-weight: 600;
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+// Termos Section
+.termos {
+    padding: $spacing-xxl 0;
+    background: $light-gray;
+
+    h2 {
+        text-align: center;
+        font-size: 38px;
+        font-weight: 600;
+        margin-bottom: $spacing-xl;
+        color: $primary-color;
+        letter-spacing: -0.5px;
+    }
+
+    .video-placeholder {
+        max-width: 800px;
+        margin: 0 auto;
+        aspect-ratio: 16/9;
+        background: $primary-color;
+        border-radius: 8px;
+        @include flex-center;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            @include flex-center;
+            color: $secondary-color;
+            font-size: 32px;
+            backdrop-filter: blur(10px);
+        }
+    }
+}
+
+// Quem Somos Section
+.quem-somos {
+    padding: $spacing-xxl 0;
+    background: $secondary-color;
+
+    h2 {
+        text-align: center;
+        font-size: 38px;
+        font-weight: 600;
+        margin-bottom: $spacing-xl;
+        color: $primary-color;
+        letter-spacing: -0.5px;
+    }
+
+    .quem-somos-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-xl;
+        margin-bottom: $spacing-xl;
+    }
+
+    .quem-somos-item {
+        h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: $spacing-lg;
+            color: $primary-color;
+        }
+
+        p {
+            font-size: 15px;
+            color: $text-color;
+            line-height: 1.8;
+            margin-bottom: $spacing-lg;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .quem-somos-images {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-md;
+        margin-top: $spacing-lg;
+
+        .image-item {
+            img {
+                width: 100%;
+                border-radius: 8px;
+            }
+        }
+    }
+}
+
+// Footer
+.footer {
+    background: $dark-gray;
+    padding: $spacing-xl 0;
+    color: $secondary-color;
+
+    .footer-content {
+        display: flex;
+        align-items: center;
+        gap: $spacing-lg;
+    }
+
+    .footer-logo {
+        flex-shrink: 0;
+
+        .logo-icon {
+            width: 100px;
+            height: 100px;
+            @include flex-center;
+            color: $secondary-color;
+        }
+    }
+
+    .footer-text {
+        flex: 1;
+
+        h3 {
+            font-size: 26px;
+            font-weight: 400;
+            margin-bottom: $spacing-lg;
+            line-height: 1.5;
+            letter-spacing: -0.3px;
+        }
+
+        .footer-form {
+            display: flex;
+            gap: $spacing-sm;
+            max-width: 600px;
+
+            .email-input {
+                flex: 1;
+                padding: $spacing-sm $spacing-md;
+                border: none;
+                border-radius: 4px;
+                font-size: 14px;
+                font-family: $font-family;
+
+                &::placeholder {
+                    color: $accent-color;
+                }
+            }
+
+            .submit-btn {
+                padding: $spacing-sm $spacing-md;
+                background: $secondary-color;
+                color: $primary-color;
+                border: none;
+                border-radius: 4px;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                white-space: nowrap;
+                font-family: $font-family;
+
+                &:hover {
+                    background: $light-gray;
+                    transform: translateY(-2px);
+                }
+            }
+        }
+    }
+}
+
+// ============================================================
+// RESPONSIVIDADE - Mobile First Approach
+// ============================================================
+
+// Large Desktop (1280px - 1440px+)
+@media (min-width: $breakpoint-xl) {
+    .container {
+        padding: 0 48px;
+    }
+
+    .hero .hero-content h2 {
+        font-size: 48px;
+    }
+}
+
+// Tablet Landscape / Small Desktop (1024px - 1279px)
+@media (max-width: #{$breakpoint-xl - 1px}) {
+    .container {
+        padding: 0 40px;
+    }
+
+    .hero .hero-content h2 {
+        font-size: 40px;
+    }
+
+    .solucoes h2,
+    .processo h2,
+    .incluso h2,
+    .proposta h2,
+    .termos h2,
+    .quem-somos h2 {
+        font-size: 36px;
+    }
+}
+
+// Tablet Portrait (768px - 1023px)
+@media (max-width: #{$breakpoint-lg - 1px}) {
+    .container {
+        padding: 0 24px;
+    }
+
+    // Header
+    .header {
+        .logo h1 {
+            font-size: 22px;
+        }
+
+        .nav {
+            gap: 20px;
+
+            a {
+                font-size: 11px;
+            }
+        }
+    }
+
+    // Hero
+    .hero {
+        padding-top: 100px;
+        padding-bottom: $spacing-lg;
+
+        .hero-content {
+            flex-direction: column;
+            text-align: center;
+            gap: $spacing-lg;
+
+            h2 {
+                font-size: 34px;
+                max-width: 100%;
+            }
+
+            #card {
+                margin: 2em auto;
+                max-width: 500px;
+
+                model-viewer {
+                    width: 100%;
+                    height: 400px;
+                }
+            }
+        }
+    }
+
+    // Seções
+    .solucoes,
+    .processo,
+    .incluso,
+    .proposta,
+    .termos,
+    .quem-somos {
+        padding: $spacing-xl 0;
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: $spacing-lg;
+        }
+    }
+
+    // Grids - 2 colunas para tablet
+    .solucoes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-md;
+    }
+
+    .incluso-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-md;
+    }
+
+    // Processo - linha do tempo simplificada
+    .processo {
+        .processo-timeline::before {
+            left: 20px;
+        }
+
+        .processo-item {
+
+            &.left,
+            &.right {
+                flex-direction: row;
+                justify-content: flex-start;
+                padding-left: 60px;
+                padding-right: 0;
+
+                .processo-content {
+                    text-align: left;
+                    padding-left: $spacing-md;
+                    padding-right: 0;
+                }
+
+                .processo-number {
+                    position: absolute;
+                    left: 0;
+                    right: auto;
+                }
+            }
+        }
+    }
+
+    // Quem Somos
+    .quem-somos-grid {
+        gap: $spacing-lg;
+    }
+
+    // Orçamento
+    .orcamento {
+        .orcamento-items {
+            padding: $spacing-md;
+        }
+
+        .orcamento-item {
+            padding: $spacing-md;
+
+            .item-info h4 {
+                font-size: 18px;
+            }
+
+            .item-price {
+                font-size: 24px;
+            }
+        }
+    }
+
+    // Footer
+    .footer {
+        .footer-content {
+            gap: $spacing-lg;
+        }
+
+        .footer-text h3 {
+            font-size: 24px;
+        }
+    }
+}
+
+// Mobile Landscape (576px - 767px)
+@media (max-width: #{$breakpoint-md - 1px}) {
+    .container {
+        padding: 0 20px;
+    }
+
+    // Header - menu hamburger seria ideal aqui
+    .header {
+        padding: 12px 0;
+
+        .logo h1 {
+            font-size: 20px;
+            letter-spacing: 1.5px;
+        }
+
+        .logo p {
+            font-size: 9px;
+        }
+
+        .nav {
+            gap: 16px;
+
+            a {
+                font-size: 10px;
+            }
+        }
+    }
+
+    // Hero
+    .hero {
+        padding-top: 90px;
+        padding-bottom: $spacing-md;
+
+        .hero-content {
+            gap: $spacing-md;
+
+            h2 {
+                font-size: 28px;
+                line-height: 1.3;
+            }
+
+            #card {
+                margin: 1.5em auto;
+                max-width: 100%;
+
+                model-viewer {
+                    width: 100%;
+                    height: 350px;
+                }
+            }
+        }
+    }
+
+    // Dark Banner
+    .dark-banner {
+        padding: $spacing-md 0;
+
+        p {
+            font-size: 11px;
+            letter-spacing: 3px;
+        }
+    }
+
+    // Seções - espaçamento reduzido
+    .solucoes,
+    .processo,
+    .incluso,
+    .proposta,
+    .termos,
+    .quem-somos {
+        padding: $spacing-lg 0;
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: $spacing-md;
+        }
+    }
+
+    // Grids - 1 coluna
+    .solucoes-grid,
+    .incluso-grid {
+        grid-template-columns: 1fr;
+        gap: $spacing-md;
+    }
+
+    .solucao-card,
+    .incluso-card {
+        padding: $spacing-md;
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: $spacing-md;
+        }
+
+        h3 {
+            font-size: 17px;
+            margin-bottom: $spacing-sm;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+
+    // Processo
+    .processo {
+        h2 {
+            margin-bottom: $spacing-lg;
+        }
+
+        .processo-item {
+            margin-bottom: $spacing-md;
+        }
+
+        .processo-content {
+            max-width: 100%;
+
+            h3 {
+                font-size: 20px;
+            }
+
+            h4 {
+                font-size: 14px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+
+    // Quem Somos
+    .quem-somos-grid {
+        grid-template-columns: 1fr;
+        gap: $spacing-md;
+    }
+
+    .quem-somos-item {
+        h3 {
+            font-size: 20px;
+            margin-bottom: $spacing-md;
+        }
+
+        p {
+            font-size: 14px;
+            margin-bottom: $spacing-md;
+        }
+    }
+
+    // Proposta
+    .proposta {
+        .proposta-intro {
+            font-size: 15px;
+            margin-bottom: $spacing-md;
+        }
+
+        .proposta-image {
+            margin: $spacing-md auto;
+        }
+    }
+
+    // Orçamento
+    .orcamento {
+        h3 {
+            font-size: 26px;
+        }
+
+        .orcamento-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: $spacing-sm;
+            padding: $spacing-md;
+
+            .item-info {
+                h4 {
+                    font-size: 17px;
+                }
+
+                p {
+                    font-size: 14px;
+                }
+            }
+
+            .item-price {
+                font-size: 22px;
+                margin-left: 0;
+            }
+        }
+
+        .orcamento-detalhes {
+            padding: $spacing-md;
+
+            h4 {
+                font-size: 20px;
+                margin-bottom: $spacing-md;
+            }
+
+            .servico-categoria {
+                h5 {
+                    font-size: 16px;
+                }
+
+                ul li {
+                    font-size: 14px;
+                    padding: 6px 0;
+                }
+            }
+        }
+
+        .orcamento-total {
+            padding: $spacing-md;
+
+            .total-row {
+                font-size: 17px;
+
+                .valor-total {
+                    font-size: 28px;
+                }
+            }
+        }
+
+        .orcamento-footer {
+            padding: $spacing-md;
+
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+
+    // Footer
+    .footer {
+        padding: $spacing-lg 0;
+
+        .footer-content {
+            flex-direction: column;
+            text-align: center;
+            gap: $spacing-md;
+        }
+
+        .footer-logo .logo-icon {
+            width: 80px;
+            height: 80px;
+        }
+
+        .footer-text {
+            h3 {
+                font-size: 22px;
+                margin-bottom: $spacing-md;
+            }
+
+            .footer-form {
+                flex-direction: column;
+                gap: $spacing-sm;
+                max-width: 100%;
+
+                .email-input {
+                    padding: 14px 20px;
+                }
+
+                .submit-btn {
+                    padding: 14px 20px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// Mobile Portrait (< 576px)
+@media (max-width: #{$breakpoint-sm - 1px}) {
+    .container {
+        padding: 0 16px;
+    }
+
+    // Header - navegação escondida, necessário hamburger menu
+    .header {
+        padding: 10px 0;
+
+        .logo h1 {
+            font-size: 18px;
+        }
+
+        .logo p {
+            font-size: 8px;
+            letter-spacing: 3px;
+        }
+
+        .nav {
+            display: none; // Implementar menu hamburger
+        }
+    }
+
+    // Hero
+    .hero {
+        padding-top: 80px;
+        padding-bottom: $spacing-md;
+
+        .hero-content {
+            gap: $spacing-md;
+
+            h2 {
+                font-size: 24px;
+                line-height: 1.3;
+                letter-spacing: -0.3px;
+            }
+
+            #card {
+                margin: 1em auto;
+                max-width: 100%;
+
+                model-viewer {
+                    width: 100%;
+                    height: 300px;
+                }
+            }
+        }
+    }
+
+    // Dark Banner
+    .dark-banner {
+        padding: $spacing-md 0;
+
+        p {
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+    }
+
+    // Seções - espaçamento mínimo
+    .solucoes,
+    .processo,
+    .incluso,
+    .proposta,
+    .termos,
+    .quem-somos {
+        padding: $spacing-md 0;
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: $spacing-md;
+        }
+    }
+
+    // Cards
+    .solucao-card,
+    .incluso-card {
+        padding: $spacing-md $spacing-sm;
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: $spacing-sm;
+        }
+
+        h3 {
+            font-size: 16px;
+            margin-bottom: $spacing-sm;
+            line-height: 1.3;
+
+            br {
+                display: none; // Remove quebras de linha forçadas
+            }
+        }
+
+        p {
+            font-size: 13px;
+            line-height: 1.6;
+
+            br {
+                display: none;
+            }
+        }
+    }
+
+    // Processo
+    .processo {
+        .processo-timeline::before {
+            left: 15px;
+        }
+
+        .processo-item {
+            margin-bottom: $spacing-md;
+            padding-left: 50px;
+
+            .processo-number {
+                left: 0;
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+
+            .processo-content {
+                padding-left: $spacing-sm;
+
+                h3 {
+                    font-size: 18px;
+                    margin-bottom: $spacing-xs;
+                }
+
+                h4 {
+                    font-size: 13px;
+                    margin-bottom: $spacing-sm;
+                }
+
+                p {
+                    font-size: 13px;
+                    line-height: 1.6;
+                }
+            }
+        }
+    }
+
+    // Proposta
+    .proposta {
+        .proposta-intro {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+    }
+
+    // Orçamento
+    .orcamento {
+        h3 {
+            font-size: 22px;
+            margin-bottom: $spacing-md;
+        }
+
+        .orcamento-items {
+            padding: $spacing-sm;
+        }
+
+        .orcamento-item {
+            padding: $spacing-sm;
+
+            .item-info {
+                h4 {
+                    font-size: 16px;
+                    margin-bottom: $spacing-xs;
+                }
+
+                p {
+                    font-size: 13px;
+                    line-height: 1.5;
+                }
+            }
+
+            .item-price {
+                font-size: 20px;
+                font-weight: 700;
+            }
+        }
+
+        .orcamento-detalhes {
+            padding: $spacing-sm;
+
+            h4 {
+                font-size: 18px;
+                margin-bottom: $spacing-sm;
+            }
+
+            .servicos-lista {
+                gap: $spacing-md;
+            }
+
+            .servico-categoria {
+                h5 {
+                    font-size: 15px;
+                    margin-bottom: $spacing-sm;
+                }
+
+                ul li {
+                    font-size: 13px;
+                    padding: 4px 0;
+                    padding-left: $spacing-sm;
+                }
+            }
+        }
+
+        .orcamento-total {
+            padding: $spacing-md $spacing-sm;
+
+            .total-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: $spacing-xs;
+                font-size: 15px;
+
+                .valor-total {
+                    font-size: 26px;
+                }
+            }
+        }
+
+        .orcamento-footer {
+            padding: $spacing-sm;
+
+            p {
+                font-size: 13px;
+                line-height: 1.6;
+                margin-bottom: $spacing-xs;
+            }
+        }
+    }
+
+    // Termos (vídeo)
+    .termos {
+        .video-placeholder {
+            border-radius: 6px;
+
+            .play-button {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+        }
+    }
+
+    // Quem Somos
+    .quem-somos-item {
+        h3 {
+            font-size: 18px;
+            margin-bottom: $spacing-sm;
+        }
+
+        p {
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: $spacing-sm;
+        }
+    }
+
+    // Footer
+    .footer {
+        padding: $spacing-md 0;
+
+        .footer-logo .logo-icon {
+            width: 70px;
+            height: 70px;
+        }
+
+        .footer-text {
+            h3 {
+                font-size: 18px;
+                line-height: 1.4;
+                margin-bottom: $spacing-sm;
+            }
+
+            .footer-form {
+                .email-input {
+                    padding: 12px 16px;
+                    font-size: 13px;
+                }
+
+                .submit-btn {
+                    padding: 12px 16px;
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}
+
+// Extra Small Mobile (< 375px)
+@media (max-width: #{$breakpoint-xs - 1px}) {
+    .container {
+        padding: 0 12px;
+    }
+
+    .hero .hero-content {
+        h2 {
+            font-size: 20px;
+        }
+
+        #card model-viewer {
+            height: 250px;
+        }
+    }
+
+    .solucoes,
+    .processo,
+    .incluso,
+    .proposta,
+    .termos,
+    .quem-somos {
+        h2 {
+            font-size: 20px;
+        }
+    }
+
+    .orcamento {
+        h3 {
+            font-size: 20px;
+        }
+
+        .orcamento-item .item-price {
+            font-size: 18px;
+        }
+
+        .orcamento-total .total-row .valor-total {
+            font-size: 22px;
+        }
+    }
+}
+
+// Landscape orientation fixes (height is smaller than width)
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        padding-top: 70px;
+        padding-bottom: $spacing-sm;
+
+        .hero-content #card model-viewer {
+            height: 250px;
+        }
+    }
+
+    .solucoes,
+    .processo,
+    .incluso,
+    .proposta,
+    .termos,
+    .quem-somos {
+        padding: $spacing-md 0;
+    }
+}
+
+// Print styles (bonus)
+@media print {
+
+    .header,
+    .footer,
+    .dark-banner {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 0;
+    }
+
+    * {
+        color: #000 !important;
+        background: #fff !important;
+    }
+}
