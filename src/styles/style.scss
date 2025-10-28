@@ -133,7 +133,8 @@ a {
 
     .logo {
         img {
-            width: 80px;
+            max-width: 100px;
+            width: 100%;
             height: auto;
         }
     }
@@ -907,9 +908,6 @@ a {
 
     // Header
     .header {
-        .logo h1 {
-            font-size: 22px;
-        }
 
         .nav {
             gap: 20px;
@@ -1048,15 +1046,6 @@ a {
     // Header - menu hamburger seria ideal aqui
     .header {
         padding: 12px 0;
-
-        .logo h1 {
-            font-size: 20px;
-            letter-spacing: 1.5px;
-        }
-
-        .logo p {
-            font-size: 9px;
-        }
 
         .nav {
             gap: 16px;
