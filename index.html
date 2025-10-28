@@ -17,13 +17,23 @@
 
 <body>
     <!-- Header -->
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
     <header class="header">
         <div class="container">
             <div class="logo">
-                <h1>CHAKRA</h1>
-                <p>MÓVEIS</p>
+                <img src="src/assets/logo-preta.png" alt="Chakra Móveis Logo">
             </div>
-            <nav class="nav">
+
+            <!-- botão hamburger (aparece em telas pequenas) -->
+            <button id="navToggle" class="hamburger" aria-controls="main-nav" aria-expanded="false"
+                aria-label="Abrir menu">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+
+            <nav id="main-nav" class="nav" role="navigation" aria-hidden="true">
                 <a href="#solucoes">PRODUTOS</a>
                 <a href="#processo">COMPRA</a>
                 <a href="#orcamento">CATÁLOGO</a>
@@ -36,7 +46,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>Móveis que transformam seu espaço<br>Design, qualidade e conforto para sua casa</h2>
+                <h2>Visualize. Interaja<br>Compre com confiança</h2>
                 <div id="card">
                     <!-- ADICIONE AQUI A PARTE DE VR -->
 
@@ -53,12 +63,12 @@
     <!-- Dark Banner -->
     <section class="dark-banner">
         <div class="container">
-            <p>DESIGN QUE TRANSFORMA AMBIENTES</p>
+            <p>EXPERIÊNCIA QUE TRANSFORMA</p>
         </div>
     </section>
 
     <!-- Soluções Section -->
-    <section id="solucoes" class="solucoes">
+    <!-- <section id="solucoes" class="solucoes">
         <div class="container">
             <h2>Nossos Produtos</h2>
             <div class="solucoes-grid">
@@ -95,47 +105,47 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Processo Section -->
     <section id="processo" class="processo">
         <div class="container">
-            <h2>Como funciona a compra?</h2>
+            <h2>Nosso Processo</h2>
             <div class="processo-timeline">
                 <div class="processo-item left">
                     <div class="processo-number">1</div>
                     <div class="processo-content">
-                        <h3>Consulta</h3>
-                        <h4>Entenda suas necessidades</h4>
-                        <p>Conversamos sobre o espaço, estilo e medidas. A partir disso indicamos modelos, medidas
-                            e possíveis personalizações para o seu móvel.</p>
+                        <h3>Briefing & Análise</h3>
+                        <!-- <h4>Entenda suas necessidades</h4> -->
+                        <p>Entendemos seu negócio, identificamos os móveis‑alvo e definimos o volume, estilo e
+                            funcionalidade.“</p>
                     </div>
                 </div>
                 <div class="processo-item right">
                     <div class="processo-number">2</div>
                     <div class="processo-content">
-                        <h3>Escolha e Personalização</h3>
-                        <h4>Selecione materiais e acabamentos</h4>
-                        <p>Apresentamos opções de madeira, cores, puxadores e acabamentos. Você aprova o projeto antes
-                            de prosseguirmos para a produção.</p>
+                        <h3>Modelagem 3D e AR</h3>
+                        <!-- <h4>Selecione materiais e acabamentos</h4> -->
+                        <p>Criamos modelos 3D com acabamento realista, aplicamos tecnologia AR para visualização no
+                            ambiente real.</p>
                     </div>
                 </div>
                 <div class="processo-item left">
                     <div class="processo-number">3</div>
                     <div class="processo-content">
-                        <h3>Confirmação do Pedido</h3>
-                        <h4>Produção agendada</h4>
-                        <p>Após aprovação, confirmamos prazos, condições de pagamento e agendamos a produção e entrega.
+                        <h3>Teste no Site</h3>
+                        <!-- <h4>Produção agendada</h4> -->
+                        <p>Integramos os modelos ao seu site, com visualizador 3D responsivo e teste em dispositivos
+                            reais.
                         </p>
                     </div>
                 </div>
                 <div class="processo-item right">
                     <div class="processo-number">4</div>
                     <div class="processo-content">
-                        <h3>Produção e Entrega</h3>
-                        <h4>Montagem e finalização</h4>
-                        <p>Fabricamos com controle de qualidade, realizamos acabamento final e entregamos seu móvel com
-                            montagem profissional quando aplicável.</p>
+                        <h3>Publicação</h3>
+                        <!-- <h4>Montagem e finalização</h4> -->
+                        <p>Publicamos ao vivo, entregamos instruções para uso e oferecemos suporte técnico inicial.</p>
                     </div>
                 </div>
             </div>
@@ -145,7 +155,7 @@
     <!-- Incluso Section -->
     <section class="incluso">
         <div class="container">
-            <h2>O que acompanha seu móvel</h2>
+            <h2>O que sua loja ganha</h2>
             <div class="incluso-grid">
                 <div class="incluso-card">
                     <div class="icon">
@@ -154,8 +164,8 @@
                                 stroke="currentColor" stroke-width="2" fill="none" />
                         </svg>
                     </div>
-                    <h3>Entrega e Montagem</h3>
-                    <p>Transporte cuidadoso até sua casa e montagem<br>profissional quando necessário.</p>
+                    <h3>Maior Engajamento</h3>
+                    <p>Modelos 3D e AR fazem seus produtos se destacarem e aumentam o tempo de interação no site.</p>
                 </div>
                 <div class="incluso-card">
                     <div class="icon">
@@ -164,8 +174,8 @@
                             <path d="M16 14 L26 20 L16 26 Z" fill="currentColor" />
                         </svg>
                     </div>
-                    <h3>Garantia</h3>
-                    <p>Garantia contra defeitos de fabricação<br>e suporte pós-venda por 12 meses.</p>
+                    <h3>Conversão Aumentada</h3>
+                    <p>Clientes que veem móveis em AR têm mais confiança e compram com mais frequência.</p>
                 </div>
                 <div class="incluso-card">
                     <div class="icon">
@@ -176,8 +186,8 @@
                             <line x1="25" y1="15" x2="15" y2="25" stroke="currentColor" stroke-width="2" />
                         </svg>
                     </div>
-                    <h3>Acabamento Personalizado</h3>
-                    <p>Acabamentos sob medida, seleção de verniz,<br>pinturas e opções de tecido sob pedido.</p>
+                    <h3>Diferencial Competitivo</h3>
+                    <p>Sua loja se posiciona à frente com tecnologia, não só produtos.</p>
                 </div>
             </div>
         </div>
@@ -186,128 +196,91 @@
     <!-- Proposta Section -->
     <section id="orcamento" class="proposta">
         <div class="container">
-            <h2>Catálogo e Preços</h2>
+            <h2>Planos e Preços</h2>
             <p class="proposta-intro">Conheça nossa seleção de móveis de design com opções de acabamento
                 e personalização. Abaixo, alguns modelos em destaque e seus valores indicativos.</p>
 
             <div class="proposta-image">
-                <img src="src/assets/furniture.jpg" alt="Catálogo de móveis">
+                <img src="src/assets/moveis.jpeg" alt="Catálogo de móveis">
             </div>
 
             <div class="orcamento">
-                <h3>Produtos em destaque</h3>
+                <h3>Móveis</h3>
                 <div class="orcamento-items">
                     <div class="orcamento-item">
                         <div class="item-info">
-                            <h4>Mesa de Centro Movenord</h4>
-                            <p>Mesa em madeira maciça, acabamento natural, 110x60cm.</p>
+                            <h4>1 a 4 unidades:</h4>
+                            <!-- <p>Mesa em madeira maciça, acabamento natural, 110x60cm.</p> -->
                         </div>
-                        <div class="item-price">R$ 2.500</div>
+                        <div class="item-price">R$ 300 por unidade</div>
                     </div>
                     <div class="orcamento-item">
                         <div class="item-info">
-                            <h4>Conjunto Sala - Sofá + Poltrona</h4>
-                            <p>Sofá 3 lugares e poltrona com opções de tecido.
+                            <h4>5 a 9 unidades</h4>
+                            <!-- <p>Sofá 3 lugares e poltrona com opções de tecido. -->
                             </p>
                         </div>
-                        <div class="item-price">R$ 6.500</div>
+                        <div class="item-price">R$ 250 por unidade</div>
                     </div>
                     <div class="orcamento-item">
                         <div class="item-info">
-                            <h4>Estante Modular (3 módulos)</h4>
-                            <p>Estante em MDF e metal com acabamento personalizado.</p>
+                            <h4>10+ unidades</h4>
+                            <!-- <p>Estante em MDF e metal com acabamento personalizado.</p> -->
                         </div>
-                        <div class="item-price">R$ 3.200</div>
+                        <div class="item-price">R$ 200 por unidade</div>
                     </div>
+
+                    <span>*Inclui modelagem, AR e inserção no site</span>
+                </div>
+                <h3>Cadeiras</h3>
+                <div class="orcamento-items">
+                    <div class="orcamento-item">
+                        <div class="item-info">
+                            <h4>1 a 4 unidades:</h4>
+                            <!-- <p>Mesa em madeira maciça, acabamento natural, 110x60cm.</p> -->
+                        </div>
+                        <div class="item-price">R$ 500 por unidade</div>
+                    </div>
+                    <div class="orcamento-item">
+                        <div class="item-info">
+                            <h4>5 a 9 unidades</h4>
+                            <!-- <p>Sofá 3 lugares e poltrona com opções de tecido. -->
+                            </p>
+                        </div>
+                        <div class="item-price">R$ 450 por unidade</div>
+                    </div>
+                    <div class="orcamento-item">
+                        <div class="item-info">
+                            <h4>10+ unidades</h4>
+                            <!-- <p>Estante em MDF e metal com acabamento personalizado.</p> -->
+                        </div>
+                        <div class="item-price">R$ 400 por unidade</div>
+                    </div>
+
+                    <span>*Inclui modelagem, AR e inserção no site</span>
                 </div>
 
                 <div class="orcamento-detalhes">
-                    <h4>Especificações e Serviços</h4>
-                    <div class="servicos-lista">
-                        <div class="servico-categoria">
-                            <h5>Material e Acabamento:</h5>
-                            <ul>
-                                <li>Madeira maciça, MDF ou opções sustentáveis</li>
-                                <li>Verniz, óleo ou pintura eletrostática</li>
-                                <li>Opções de puxadores e ferragens</li>
-                            </ul>
-                        </div>
-                        <div class="servico-categoria">
-                            <h5>Serviços Inclusos:</h5>
-                            <ul>
-                                <li>Transporte e entrega especializada</li>
-                                <li>Montagem realizada pela equipe técnica</li>
-                                <li>Inspeção de qualidade antes da entrega</li>
-                            </ul>
-                        </div>
-                        <div class="servico-categoria">
-                            <h5>Garantia e Pós-Venda:</h5>
-                            <ul>
-                                <li>12 meses de garantia contra defeitos de fabricação</li>
-                                <li>Atendimento para manutenção e peças</li>
-                            </ul>
-                        </div>
+                    <h4>Formas de Pagamento</h4>
+                    <div class="detalhes-list">
+                        <ul>
+                            <li>Pagamento via permuta em móveis ou valor em reais (parcelável)</li>
+                            <li>Também aceitamos pagamentos mistos.</li>
+                            <li>Condições personalizáveis por volume</li>
+                        </ul>
                     </div>
                 </div>
-
-                <div class="orcamento-footer">
-                    <p><strong>Prazo de Fabricação:</strong> 20-45 dias úteis, dependendo do produto e personalização
-                    </p>
-                    <p><strong>Condições de Pagamento:</strong> Entrada de 30% | Parcelamento e opções em cartão</p>
-                    <p><strong>Validade dos Preços:</strong> 30 dias</p>
-                </div>
             </div>
-        </div>
     </section>
 
     <!-- Termos Section -->
     <section class="termos">
         <div class="container">
-            <h2>Conheça Nossos Ambientes</h2>
-            <iframe src="https://youtu.be/QBUvAj3Nm30?si=uXMGG_8_2gaEuay5" frameborder="0"
-                class="video-placeholder"></iframe>
-
+            <h2>Vamos transformar sua loja em uma vitrine interativa?</h2>
         </div>
     </section>
 
     <!-- Quem Somos Section -->
-    <section class="quem-somos">
-        <div class="container">
-            <h2>Quem Somos?</h2>
-            <div class="quem-somos-grid">
-                <div class="quem-somos-item">
-                    <h3>Somos Chakra Móveis</h3>
-                    <p>A Chakra Móveis é uma marcenaria especializada em criar peças únicas que transformam ambientes.
-                        Com mais
-                        de 10 anos de experiência no mercado, desenvolvemos móveis que combinam design contemporâneo,
-                        funcionalidade e qualidade artesanal.</p>
-                    <p>Nossa equipe é formada por profissionais apaixonados pelo que fazem, sempre em busca da
-                        excelência técnica e estética. Trabalhamos com os melhores materiais e processos para
-                        garantir que cada móvel seja único e duradouro.</p>
-                </div>
-                <div class="quem-somos-item">
-                    <h3>Nossa Missão</h3>
-                    <p>Transformar espaços em ambientes acolhedores e funcionais através de móveis que inspiram e
-                        encantam.
-                        Acreditamos que cada projeto é uma oportunidade de criar algo especial, que vai além do esperado
-                        e deixa uma marca duradoura na vida de nossos clientes.</p>
-                    <p>Valorizamos a qualidade, a sustentabilidade e o compromisso com cada detalhe em todas as etapas
-                        do processo.
-                        Da consulta inicial à entrega final, estamos ao lado dos nossos clientes para garantir que seus
-                        sonhos
-                        se tornem realidade.</p>
-                </div>
-            </div>
-            <!-- <div class="quem-somos-images">
-                <div class="image-item">
-                    <img src="example.png" alt="Equipe em ação">
-                </div>
-                <div class="image-item">
-                    <img src="example.png" alt="Equipamento de produção">
-                </div>
-            </div> -->
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -315,13 +288,10 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <div class="logo-icon">
-                        <svg width="60" height="60" viewBox="0 0 60 60">
-                            <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="2" fill="none" />
-                            <circle cx="30" cy="30" r="20" fill="currentColor" opacity="0.3" />
-                            <circle cx="30" cy="30" r="12" fill="currentColor" />
-                        </svg>
+                        <img src="src/assets/logo-branca.png" alt="Vituex Móveis Logo">
                     </div>
                 </div>
+
                 <div class="footer-text">
                     <h3>Móveis que contam histórias.<br>Ambientes que expressam quem você é.</h3>
                     <div class="footer-form">
