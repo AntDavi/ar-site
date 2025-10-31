@@ -1692,3 +1692,16 @@ a {
         background: #fff !important;
     }
 }
+
+// Model Viewer
+model-viewer::part(default-progress-bar) {
+    background-color: #e3e3e3; /* cor do fundo da barra */
+    height: 6px;
+    border-radius: 4px;
+}
+
+model-viewer::part(bar) {
+    background: linear-gradient(90deg, #4CAF50, #81C784); /* cor da barra */
+    height: 6px;
+    border-radius: 4px;
+}

@@ -49,12 +49,24 @@
                 <h2>Visualize. Interaja<br>Compre com confiança</h2>
                 <div id="card">
                     <!-- ADICIONE AQUI A PARTE DE VR -->
-
-                    <model-viewer src="src/assets/MESA MOVENORD.glb" ios-src="src/assets/MESA MOVENORD.usdz"
-                        poster="src/assets/Mesa_poster.png" alt="Mesa de Centro - Movenord" shadow-intensity="1"
-                        camera-controls auto-rotate ar min-camera-orbit="auto 0deg auto"
-                        max-camera-orbit="auto 88deg auto">
-                    </model-viewer>
+                    <model-viewer
+                        src="src/assets/MESA MOVENORD.glb"
+                        ios-src="src/assets/MESA MOVENORD.usdz"
+                        poster="src/assets/Mesa_poster.png"
+                        alt="Mesa de Centro - Movenord"
+                        shadow-intensity="1"
+                        camera-controls
+                        auto-rotate
+                        ar
+                        min-camera-orbit="auto 0deg auto"
+                        max-camera-orbit="auto 88deg auto"
+                        loading="lazy"
+                        disable-zoom
+                        exposure="1.1"
+                        environment-image="neutral"
+                        quick-look-browsers="safari chrome"
+                        style="width:100%; height:500px;"
+                    ></model-viewer>
                 </div>
             </div>
         </div>
