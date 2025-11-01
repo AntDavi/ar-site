@@ -94,11 +94,30 @@ body {
     overflow-x: hidden;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+// Skip link para acessibilidade
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: $primary-color;
+    color: $secondary-color;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 10000;
+    border-radius: 0 0 8px 0;
+    transition: top 0.3s ease;
+
+    &:focus {
+        top: 0;
+    }
 }
+
+// img {
+//     max-width: 100%;
+//     height: auto;
+//     display: block;
+// }
 
 a {
     text-decoration: none;
@@ -131,13 +150,12 @@ a {
         align-items: center;
     }
 
-    .logo {
-        img {
-            max-width: 100px;
-            width: 100%;
-            height: auto;
-        }
+    img {
+        max-width: 100px;
+        width: 100%;
+        height: auto;
     }
+
 
     .nav {
         display: flex;
@@ -209,38 +227,62 @@ a {
 
 // Hero Section
 .hero {
-    padding-top: 120px;
-    padding-bottom: $spacing-xl;
+    min-height: 100vh;
+    min-height: 100dvh; // dynamic viewport height for mobile browsers
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: $secondary-color;
+    padding: 0;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        min-height: 100dvh;
+
+        width: 100%;
+    }
 
     .hero-content {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        gap: $spacing-xl;
+        gap: $spacing-xl * 1.5;
+        padding: $spacing-xl 0;
+        width: 100%;
 
-        h2 {
-            font-size: 42px;
+        h1 {
+            font-size: 48px;
             font-weight: 500;
             line-height: 1.3;
             max-width: 550px;
             color: $primary-color;
             letter-spacing: -0.5px;
+            text-align: left;
+            width: 100%;
         }
 
         #card {
-            margin: 3em auto;
+            margin: 0;
             display: flex;
             flex-direction: column;
             max-width: 600px;
-            border-radius: 6px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-            overflow: hidden;
             width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+            &:hover {
+                box-shadow: 0 12px 48px rgba(0, 0, 0, 0.16);
+                transform: translateY(-4px);
+            }
 
             model-viewer {
                 width: 100%;
-                height: 400px;
+                height: 500px;
                 background-color: #ffffff;
                 --poster-color: #ffffff;
 
@@ -799,18 +841,12 @@ a {
         display: flex;
         align-items: center;
         gap: $spacing-lg;
-    }
 
-    .footer-logo {
-        flex-shrink: 0;
-
-        .logo-icon {
+        img {
             width: 100px;
-            height: 100px;
-            @include flex-center;
-            color: $secondary-color;
         }
     }
+
 
     .footer-text {
         flex: 1;
@@ -920,26 +956,33 @@ a {
 
     // Hero
     .hero {
-        padding-top: 100px;
-        padding-bottom: $spacing-lg;
+        min-height: 100vh;
+        min-height: 100dvh;
+
+        .container {
+            min-height: 100vh;
+            min-height: 100dvh;
+        }
 
         .hero-content {
             flex-direction: column;
             text-align: center;
             gap: $spacing-lg;
+            padding: $spacing-lg 0;
 
             h2 {
                 font-size: 34px;
                 max-width: 100%;
+                text-align: center;
             }
 
             #card {
-                margin: 2em auto;
+                margin: 0 auto;
                 max-width: 500px;
 
                 model-viewer {
                     width: 100%;
-                    height: 400px;
+                    height: 450px;
                 }
             }
         }
@@ -1058,11 +1101,17 @@ a {
 
     // Hero
     .hero {
-        padding-top: 90px;
-        padding-bottom: $spacing-md;
+        min-height: 100vh;
+        min-height: 100dvh;
+
+        .container {
+            min-height: 100vh;
+            min-height: 100dvh;
+        }
 
         .hero-content {
             gap: $spacing-md;
+            padding: $spacing-md 0;
 
             h2 {
                 font-size: 28px;
@@ -1070,12 +1119,12 @@ a {
             }
 
             #card {
-                margin: 1.5em auto;
+                margin: 0 auto;
                 max-width: 100%;
 
                 model-viewer {
                     width: 100%;
-                    height: 350px;
+                    height: 380px;
                 }
             }
         }
@@ -1343,25 +1392,31 @@ a {
 
     // Hero
     .hero {
-        padding-top: 80px;
-        padding-bottom: $spacing-md;
+        min-height: 100vh;
+        min-height: 100dvh;
+
+        .container {
+            min-height: 100vh;
+            min-height: 100dvh;
+        }
 
         .hero-content {
             gap: $spacing-md;
+            padding: $spacing-sm 0;
 
             h2 {
-                font-size: 24px;
+                font-size: 26px;
                 line-height: 1.3;
                 letter-spacing: -0.3px;
             }
 
             #card {
-                margin: 1em auto;
+                margin: 0 auto;
                 max-width: 100%;
 
                 model-viewer {
                     width: 100%;
-                    height: 300px;
+                    height: 340px;
                 }
             }
         }
@@ -1584,11 +1639,6 @@ a {
     .footer {
         padding: $spacing-md 0;
 
-        .footer-logo .logo-icon {
-            width: 70px;
-            height: 70px;
-        }
-
         .footer-text {
             h3 {
                 font-size: 18px;
@@ -1617,13 +1667,15 @@ a {
         padding: 0 12px;
     }
 
-    .hero .hero-content {
-        h2 {
-            font-size: 20px;
-        }
+    .hero {
+        .hero-content {
+            h2 {
+                font-size: 22px;
+            }
 
-        #card model-viewer {
-            height: 250px;
+            #card model-viewer {
+                height: 300px;
+            }
         }
     }
 
@@ -1656,11 +1708,19 @@ a {
 // Landscape orientation fixes (height is smaller than width)
 @media (max-height: 600px) and (orientation: landscape) {
     .hero {
-        padding-top: 70px;
-        padding-bottom: $spacing-sm;
+        min-height: auto;
+        padding: $spacing-lg 0;
 
-        .hero-content #card model-viewer {
-            height: 250px;
+        .container {
+            min-height: auto;
+        }
+
+        .hero-content {
+            padding: $spacing-sm 0;
+
+            #card model-viewer {
+                height: 280px;
+            }
         }
     }
 
