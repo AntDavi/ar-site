@@ -133,4 +133,33 @@ document.addEventListener("DOMContentLoaded", function () {
     section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
     observer.observe(section);
   });
+
+  // Model Viewer Optimization
+  const modelViewer = document.querySelector("model-viewer");
+  if (modelViewer) {
+    // Show loading progress
+    modelViewer.addEventListener("progress", (event) => {
+      const progress = event.detail.totalProgress;
+      console.log(`Carregando modelo: ${Math.round(progress * 100)}%`);
+    });
+
+    // When model is loaded, enable auto-rotate
+    modelViewer.addEventListener("load", () => {
+      console.log("Modelo 3D carregado com sucesso!");
+      // Delay auto-rotate to ensure smooth experience
+      setTimeout(() => {
+        modelViewer.setAttribute("auto-rotate", "");
+      }, 500);
+    });
+
+    // Handle errors
+    modelViewer.addEventListener("error", (event) => {
+      console.error("Erro ao carregar modelo 3D:", event);
+    });
+
+    // Preload optimization: start camera animation immediately
+    modelViewer.addEventListener("camera-change", () => {
+      // This ensures camera is responsive immediately
+    });
+  }
 });

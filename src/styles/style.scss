@@ -353,6 +353,39 @@ a {
     }
 }
 
+// Model Loading State
+.model-loading {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+    gap: $spacing-md;
+
+    .loading-spinner {
+        width: 60px;
+        height: 60px;
+        border: 4px solid $medium-gray;
+        border-top-color: $primary-color;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    p {
+        font-size: 14px;
+        color: $text-light;
+        font-weight: 500;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 // Dark Banner
 .dark-banner {
     background: $dark-gray;
