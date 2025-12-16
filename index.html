@@ -1,108 +1,161 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIRTUEX COLCHÕES - Visualização 3D e AR | O Conforto em Realidade Aumentada</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      VIRTUEX COLCHÕES - Visualização 3D e AR | O Conforto em Realidade
+      Aumentada
+    </title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description"
-        content="Visualize móveis em 3D e Realidade Aumentada. Compre com confiança com nossa tecnologia de visualização interativa. Transforme sua experiência de compra.">
-    <meta name="keywords"
-        content="móveis 3D, realidade aumentada, AR, visualização 3D, catálogo interativo, móveis online">
-    <meta name="author" content="Virtuex Móveis">
-    <meta name="robots" content="index, follow">
+    <meta
+      name="description"
+      content="Visualize móveis em 3D e Realidade Aumentada. Compre com confiança com nossa tecnologia de visualização interativa. Transforme sua experiência de compra."
+    />
+    <meta
+      name="keywords"
+      content="móveis 3D, realidade aumentada, AR, visualização 3D, catálogo interativo, móveis online"
+    />
+    <meta name="author" content="Virtuex Móveis" />
+    <meta name="robots" content="index, follow" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="VIRTUEX MÓVEIS - Visualização 3D e AR">
-    <meta property="og:description" content="Visualize móveis em 3D e Realidade Aumentada. Compre com confiança.">
-    <meta property="og:image" content="src/assets/Mesa_poster.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="VIRTUEX MÓVEIS - Visualização 3D e AR" />
+    <meta
+      property="og:description"
+      content="Visualize móveis em 3D e Realidade Aumentada. Compre com confiança."
+    />
+    <meta property="og:image" content="src/assets/Mesa_poster.png" />
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="VIRTUEX MÓVEIS - Visualização 3D e AR">
-    <meta name="twitter:description" content="Visualize móveis em 3D e Realidade Aumentada. Compre com confiança.">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="VIRTUEX MÓVEIS - Visualização 3D e AR"
+    />
+    <meta
+      name="twitter:description"
+      content="Visualize móveis em 3D e Realidade Aumentada. Compre com confiança."
+    />
 
     <!-- Preconnect for better performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://ajax.googleapis.com">
-    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://ajax.googleapis.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-        as="style">
-    <link rel="preload" href="src/styles/style.css" as="style">
-    <link rel="preload" href="src/assets/MESA MOVENORD.glb" as="fetch" crossorigin>
-    <link rel="preload" href="src/assets/Mesa_poster.png" as="image">
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      as="style"
+    />
+    <link rel="preload" href="src/styles/style.css" as="style" />
+    <link
+      rel="preload"
+      href="src/assets/MESA MOVENORD.glb"
+      as="fetch"
+      crossorigin
+    />
+    <link rel="preload" href="src/assets/Mesa_poster.png" as="image" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="src/styles/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Model Viewer -->
-    <link rel="modulepreload" href="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js">
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
-    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
-</head>
+    <link
+      rel="modulepreload"
+      href="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"
+    />
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"
+    ></script>
+    <script
+      src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js"
+      defer
+    ></script>
+  </head>
 
-<body>
+  <body>
     <!-- Header -->
     <a class="skip-link" href="#main">Pular para o conteúdo</a>
 
     <header class="header">
-        <div class="container">
+      <div class="container">
+        <img src="src/assets/logo-preta.png" alt="Virtuex Logo" />
 
-            <img src="src/assets/logo-preta.png" alt="Virtuex Logo">
+        <!-- botão hamburger (aparece em telas pequenas) -->
+        <button
+          id="navToggle"
+          class="hamburger"
+          aria-controls="main-nav"
+          aria-expanded="false"
+          aria-label="Abrir menu"
+        >
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
 
-
-            <!-- botão hamburger (aparece em telas pequenas) -->
-            <button id="navToggle" class="hamburger" aria-controls="main-nav" aria-expanded="false"
-                aria-label="Abrir menu">
-                <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
-                </span>
-            </button>
-
-            <nav id="main-nav" class="nav" role="navigation" aria-hidden="true">
-                <a href="#solucoes">PRODUTOS</a>
-                <a href="#processo">COMPRA</a>
-                <a href="#orcamento">CATÁLOGO</a>
-                <a href="#contato">CONTATO</a>
-            </nav>
-        </div>
+        <nav id="main-nav" class="nav" role="navigation" aria-hidden="true">
+          <a href="#solucoes">PRODUTOS</a>
+          <a href="#processo">COMPRA</a>
+          <a href="#orcamento">CATÁLOGO</a>
+          <a href="#contato">CONTATO</a>
+        </nav>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section id="main" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Visualize o conforto. Teste o espaço.<br>Durma tranquilo com sua escolha.</h1>
-                <div id="card" role="region" aria-label="Visualizador 3D de móveis">
-                    <model-viewer src="src\assets\COLCHÃO_SA_02.glb" ios-src="src/assets/MESA MOVENORD.usdz"
-                        poster="src/assets/Mesa_poster.png"
-                        alt="Mesa de Centro - Movenord - Visualize em 3D e Realidade Aumentada" shadow-intensity="1"
-                        camera-controls ar ar-modes="webxr scene-viewer quick-look" min-camera-orbit="auto 0deg auto"
-                        max-camera-orbit="auto 88deg auto" loading="eager" reveal="auto" exposure="1.1"
-                        environment-image="neutral" quick-look-browsers="safari chrome" interaction-prompt="none"
-                        style="width:100%; height:500px;">
-                        <div class="model-loading" slot="poster">
-                            <div class="loading-spinner"></div>
-                            <p>Carregando modelo 3D...</p>
-                        </div>
-                    </model-viewer>
-                </div>
-            </div>
+      <div class="container">
+        <div class="hero-content">
+          <h1>
+            Visualize o conforto. Teste o espaço.<br />Durma tranquilo com sua
+            escolha.
+          </h1>
+          <div id="card" role="region" aria-label="Visualizador 3D de móveis">
+            <model-viewer
+              src="src\assets\COLCHÃO_R12.glb"
+              ios-src="src/assets/MESA MOVENORD.usdz"
+              poster="src/assets/Mesa_poster.png"
+              alt="Mesa de Centro - Movenord - Visualize em 3D e Realidade Aumentada"
+              shadow-intensity="1"
+              camera-controls
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              min-camera-orbit="auto 0deg auto"
+              max-camera-orbit="auto 88deg auto"
+              loading="eager"
+              reveal="auto"
+              exposure="1.1"
+              environment-image="neutral"
+              quick-look-browsers="safari chrome"
+              interaction-prompt="none"
+              style="width: 100%; height: 500px"
+            >
+              <div class="model-loading" slot="poster">
+                <div class="loading-spinner"></div>
+                <p>Carregando modelo 3D...</p>
+              </div>
+            </model-viewer>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Dark Banner -->
     <section class="dark-banner">
-        <div class="container">
-            <p>EXPERIÊNCIA QUE TRANSFORMA</p>
-        </div>
+      <div class="container">
+        <p>EXPERIÊNCIA QUE TRANSFORMA</p>
+      </div>
     </section>
 
     <!-- Soluções Section -->
@@ -147,120 +200,186 @@
 
     <!-- Processo Section -->
     <section id="processo" class="processo">
-        <div class="container">
-            <h2>Nosso Processo</h2>
-            <div class="processo-timeline">
-                <div class="processo-item left">
-                    <div class="processo-number">1</div>
-                    <div class="processo-content">
-                        <h3>Briefing & Análise</h3>
-                        <!-- <h4>Entenda suas necessidades</h4> -->
-                        <p>Entendemos seu negócio, identificamos as linhas de colchões e definimos as especificações de tamanho, altura e texturas do tecido.</p>
-                    </div>
-                </div>
-                <div class="processo-item right">
-                    <div class="processo-number">2</div>
-                    <div class="processo-content">
-                        <h3>Modelagem 3D e AR</h3>
-                        <!-- <h4>Selecione materiais e acabamentos</h4> -->
-                        <p>Criamos modelos 3D com acabamento realista, aplicamos tecnologia AR para visualização no
-                            ambiente real.</p>
-                    </div>
-                </div>
-                <div class="processo-item left">
-                    <div class="processo-number">3</div>
-                    <div class="processo-content">
-                        <h3>Teste no Site</h3>
-                        <!-- <h4>Produção agendada</h4> -->
-                        <p>Integramos os modelos ao seu site, com visualizador 3D responsivo e teste em dispositivos
-                            reais.
-                        </p>
-                    </div>
-                </div>
-                <div class="processo-item right">
-                    <div class="processo-number">4</div>
-                    <div class="processo-content">
-                        <h3>Publicação</h3>
-                        <!-- <h4>Montagem e finalização</h4> -->
-                        <p>Publicamos sua vitrine virtual, entregamos guias de uso para sua equipe de vendas e garantimos suporte técnico inicial.</p>
-                    </div>
-                </div>
+      <div class="container">
+        <h2>Nosso Processo</h2>
+        <div class="processo-timeline">
+          <div class="processo-item left">
+            <div class="processo-number">1</div>
+            <div class="processo-content">
+              <h3>Briefing & Análise</h3>
+              <!-- <h4>Entenda suas necessidades</h4> -->
+              <p>
+                Entendemos seu negócio, identificamos as linhas de colchões e
+                definimos as especificações de tamanho, altura e texturas do
+                tecido.
+              </p>
             </div>
+          </div>
+          <div class="processo-item right">
+            <div class="processo-number">2</div>
+            <div class="processo-content">
+              <h3>Modelagem 3D e AR</h3>
+              <!-- <h4>Selecione materiais e acabamentos</h4> -->
+              <p>
+                Criamos modelos 3D com acabamento realista, aplicamos tecnologia
+                AR para visualização no ambiente real.
+              </p>
+            </div>
+          </div>
+          <div class="processo-item left">
+            <div class="processo-number">3</div>
+            <div class="processo-content">
+              <h3>Teste no Site</h3>
+              <!-- <h4>Produção agendada</h4> -->
+              <p>
+                Integramos os modelos ao seu site, com visualizador 3D
+                responsivo e teste em dispositivos reais.
+              </p>
+            </div>
+          </div>
+          <div class="processo-item right">
+            <div class="processo-number">4</div>
+            <div class="processo-content">
+              <h3>Publicação</h3>
+              <!-- <h4>Montagem e finalização</h4> -->
+              <p>
+                Publicamos sua vitrine virtual, entregamos guias de uso para sua
+                equipe de vendas e garantimos suporte técnico inicial.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Incluso Section -->
     <section class="incluso">
-        <div class="container">
-            <h2>O que sua loja ganha</h2>
-            <div class="incluso-grid">
-                <div class="incluso-card">
-                    <div class="icon">
-                        <svg width="40" height="40" viewBox="0 0 40 40">
-                            <path d="M20 8 L25 18 L35 19 L27 26 L29 36 L20 30 L11 36 L13 26 L5 19 L15 18 Z"
-                                stroke="currentColor" stroke-width="2" fill="none" />
-                        </svg>
-                    </div>
-                    <h3>Maior Engajamento</h3>
-                    <p>A experiência imersiva retém o cliente na página, permitindo que ele explore as camadas e diferenciais dos seus colchões por mais tempo.
-                    </p>
-                </div>
-                <div class="incluso-card">
-                    <div class="icon">
-                        <svg width="40" height="40" viewBox="0 0 40 40">
-                            <circle cx="20" cy="20" r="15" stroke="currentColor" stroke-width="2" fill="none" />
-                            <path d="M16 14 L26 20 L16 26 Z" fill="currentColor" />
-                        </svg>
-                    </div>
-                    <h3>Conversão Aumentada</h3>
-                    <p>Clientes que projetam a cama no próprio quarto eliminam dúvidas sobre o tamanho e espaço, comprando com muito mais segurança.
-                    </p>
-                </div>
-                <div class="incluso-card">
-                    <div class="icon">
-                        <svg width="40" height="40" viewBox="0 0 40 40">
-                            <rect x="10" y="10" width="20" height="20" stroke="currentColor" stroke-width="2"
-                                fill="none" />
-                            <line x1="15" y1="15" x2="25" y2="25" stroke="currentColor" stroke-width="2" />
-                            <line x1="25" y1="15" x2="15" y2="25" stroke="currentColor" stroke-width="2" />
-                        </svg>
-                    </div>
-                    <h3>Diferencial Competitivo</h3>
-                    <p>Sua loja se destaca no mercado oferecendo uma experiência de compra inovadora, indo além da simples descrição de densidade e molas.
-                    </p>
-                </div>
+      <div class="container">
+        <h2>O que sua loja ganha</h2>
+        <div class="incluso-grid">
+          <div class="incluso-card">
+            <div class="icon">
+              <svg width="40" height="40" viewBox="0 0 40 40">
+                <path
+                  d="M20 8 L25 18 L35 19 L27 26 L29 36 L20 30 L11 36 L13 26 L5 19 L15 18 Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                />
+              </svg>
             </div>
+            <h3>Maior Engajamento</h3>
+            <p>
+              A experiência imersiva retém o cliente na página, permitindo que
+              ele explore as camadas e diferenciais dos seus colchões por mais
+              tempo.
+            </p>
+          </div>
+          <div class="incluso-card">
+            <div class="icon">
+              <svg width="40" height="40" viewBox="0 0 40 40">
+                <circle
+                  cx="20"
+                  cy="20"
+                  r="15"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                />
+                <path d="M16 14 L26 20 L16 26 Z" fill="currentColor" />
+              </svg>
+            </div>
+            <h3>Conversão Aumentada</h3>
+            <p>
+              Clientes que projetam a cama no próprio quarto eliminam dúvidas
+              sobre o tamanho e espaço, comprando com muito mais segurança.
+            </p>
+          </div>
+          <div class="incluso-card">
+            <div class="icon">
+              <svg width="40" height="40" viewBox="0 0 40 40">
+                <rect
+                  x="10"
+                  y="10"
+                  width="20"
+                  height="20"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                />
+                <line
+                  x1="15"
+                  y1="15"
+                  x2="25"
+                  y2="25"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <line
+                  x1="25"
+                  y1="15"
+                  x2="15"
+                  y2="25"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <h3>Diferencial Competitivo</h3>
+            <p>
+              Sua loja se destaca no mercado oferecendo uma experiência de
+              compra inovadora, indo além da simples descrição de densidade e
+              molas.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Termos Section -->
     <section class="termos">
-        <div class="container">
-            <h2> Vamos transformar a forma como seus clientes escolhem o sono perfeito?</h2>
-        </div>
+      <div class="container">
+        <h2>
+          Vamos transformar a forma como seus clientes escolhem o sono perfeito?
+        </h2>
+      </div>
     </section>
 
     <!-- Quem Somos Section -->
 
     <!-- Footer -->
     <footer id="contato" class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <img src="src/assets/logo-branca.png" alt="Virtuex Móveis Logo" width="100" height="auto">
+      <div class="container">
+        <div class="footer-content">
+          <img
+            src="src/assets/logo-branca.png"
+            alt="Virtuex Móveis Logo"
+            width="100"
+            height="auto"
+          />
 
-                <div class="footer-text">
-                    <h3>Colchões que renovam energias. O descanso que seu cliente merece ver de perto.</h3>
-                    <form class="footer-form" aria-label="Formulário de contato">
-                        <input type="email" placeholder="Digite seu melhor e-mail" class="email-input" required
-                            aria-label="Endereço de e-mail">
-                        <button type="submit" class="submit-btn">ENTRAR EM CONTATO</button>
-                    </form>
-                </div>
-            </div>
+          <div class="footer-text">
+            <h3>
+              Colchões que renovam energias. O descanso que seu cliente merece
+              ver de perto.
+            </h3>
+            <form class="footer-form" aria-label="Formulário de contato">
+              <input
+                type="email"
+                placeholder="Digite seu melhor e-mail"
+                class="email-input"
+                required
+                aria-label="Endereço de e-mail"
+              />
+              <button type="submit" class="submit-btn">
+                ENTRAR EM CONTATO
+              </button>
+            </form>
+          </div>
         </div>
+      </div>
     </footer>
 
     <script src="src/script/index.js"></script>
-</body>
-
+  </body>
 </html>
